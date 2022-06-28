@@ -1,8 +1,17 @@
-const result = await prisma.user.findMany({
+const result = await prisma.post.findMany({
   where: {
-    name: {
-      not: "Gun Gun Febrianza",
-    },
+    OR: [
+      {
+        title: {
+          contains: "Prisma",
+        },
+      },
+      {
+        title: {
+          contains: "databases",
+        },
+      },
+    ],
   },
 });
 
@@ -20,10 +29,8 @@ const result = await prisma.post.findMany({
         },
       },
     ],
-    NOT: {
-      title: {
-        contains: "SQL",
-      },
+    AND: {
+      published: false,
     },
   },
 });
