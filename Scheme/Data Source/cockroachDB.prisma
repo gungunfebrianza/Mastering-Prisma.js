@@ -1,0 +1,4 @@
+datasource db {
+  provider = "cockroachdb"
+  url      = "postgresql://johndoe:mypassword@localhost:26257/mydb?schema=public"
+}

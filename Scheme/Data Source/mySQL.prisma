@@ -1,0 +1,4 @@
+datasource db {
+  provider = "mysql"
+  url      = "mysql://johndoe:mypassword@localhost:3306/mydb"
+}

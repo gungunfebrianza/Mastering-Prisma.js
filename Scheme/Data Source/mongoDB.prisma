@@ -1,0 +1,4 @@
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://root:password@cluster1.test1.mongodb.net/testing?retryWrites=true&w=majority"
+}
