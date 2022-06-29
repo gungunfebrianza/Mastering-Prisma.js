@@ -4,14 +4,25 @@ const prisma = new PrismaClient();
 
 // A `main` function so that you can use async/await
 async function main() {
-  const resultCreateAdmin = await prisma.user.create({
+  await prisma.user.create({
     data: {
-      email: "gungunfebrianza@gmail.com",
-      name: "Gun Gun Febrianza",
+      name: "Bono",
+      email: "Bono@prisma.io",
+      posts: {
+        create: { title: "Hello World" },
+      },
+      profile: {
+        create: { bio: "I like horses" },
+      },
     },
   });
-  const allUsers = await prisma.user.findMany();
-  // use `console.dir` to print nested objects
+
+  const allUsers = await prisma.user.findMany({
+    include: {
+      posts: true,
+      profile: true,
+    },
+  });
   console.dir(allUsers, { depth: null });
 }
 
