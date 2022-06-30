@@ -33,25 +33,26 @@ async function main() {
     },
   });
   //console.dir(allUsers, { depth: null });
-  let resultFindByEmail = await prisma.user
-    .findUnique({
-      where: { email: "gungunfebrianza@prisma.io" },
-    })
-    .catch((error) => console.log(error));
+  //FIND SPECIFIC USER
+  //   let resultFindByEmail = await prisma.user
+  //     .findUnique({
+  //       where: { email: "gungunfebrianza@prisma.io" },
+  //     })
+  //     .catch((error) => console.log(error));
   //console.dir(resultFindByEmail);
   // Run inside `async` function
   //Update Single Record
-  const post = await prisma.user.update({
-    where: { id: 1 },
-    data: { profileViews: 100 },
-  });
-  console.dir(post);
+  //   const post = await prisma.user.update({
+  //     where: { id: 1 },
+  //     data: { profileViews: 100 },
+  //   });
+  //   console.dir(post);
   //DELETE SINGLE RECORD
-  const deleteUser = await prisma.user.delete({
-    where: {
-      email: "gungunfebrianza@prisma.io",
-    },
-  });
+  //   const deleteUser = await prisma.user.delete({
+  //     where: {
+  //       email: "gungunfebrianza@prisma.io",
+  //     },
+  //   });
   //console.dir(listUsers, { depth: null });
   //DELETE MULTIPLE RECORD
   //   const deleteUsers = await prisma.user.deleteMany({
@@ -62,7 +63,21 @@ async function main() {
   //     },
   //   });
   //DELETE ALL RECORD
-  //   const deleteUsers = await prisma.user.deleteMany({});
+  //const deleteUsers = await prisma.user.deleteMany({});
+  // CASCADING DELETE
+  //   const deletePosts = prisma.post.deleteMany({
+  //     where: {
+  //       authorId: 7,
+  //     },
+  //   });
+
+  //   const deleteUser = prisma.user.delete({
+  //     where: {
+  //       id: 7,
+  //     },
+  //   });
+  //TRANSACTION
+  const transaction = await prisma.$transaction([deletePosts, deleteUser]);
 }
 
 main()
