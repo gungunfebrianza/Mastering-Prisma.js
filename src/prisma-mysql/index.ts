@@ -61,6 +61,8 @@ async function main() {
   //       },
   //     },
   //   });
+  //DELETE ALL RECORD
+  //   const deleteUsers = await prisma.user.deleteMany({});
 }
 
 main()
