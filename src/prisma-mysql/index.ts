@@ -46,6 +46,13 @@ async function main() {
     data: { profileViews: 100 },
   });
   console.dir(post);
+  //Delete Single Record
+  const deleteUser = await prisma.user.delete({
+    where: {
+      email: "gungunfebrianza@prisma.io",
+    },
+  });
+  //console.dir(listUsers, { depth: null });
 }
 
 main()
