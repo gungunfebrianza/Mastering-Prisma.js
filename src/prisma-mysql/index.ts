@@ -46,13 +46,21 @@ async function main() {
     data: { profileViews: 100 },
   });
   console.dir(post);
-  //Delete Single Record
+  //DELETE SINGLE RECORD
   const deleteUser = await prisma.user.delete({
     where: {
       email: "gungunfebrianza@prisma.io",
     },
   });
   //console.dir(listUsers, { depth: null });
+  //DELETE MULTIPLE RECORD
+  //   const deleteUsers = await prisma.user.deleteMany({
+  //     where: {
+  //       email: {
+  //         contains: "prisma.io",
+  //       },
+  //     },
+  //   });
 }
 
 main()
