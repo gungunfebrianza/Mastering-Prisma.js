@@ -41,12 +41,23 @@ async function main() {
   //     .catch((error) => console.log(error));
   //console.dir(resultFindByEmail);
   // Run inside `async` function
-  //Update Single Record
+  // UPDATE SINGLE RECORD
   //   const post = await prisma.user.update({
   //     where: { id: 1 },
   //     data: { profileViews: 100 },
   //   });
   //   console.dir(post);
+  // UPDATE NUMBER FIELDS
+  //   const updatePosts = await prisma.post.updateMany({
+  //     data: {
+  //       views: {
+  //         increment: 1,
+  //       },
+  //       likes: {
+  //         increment: 1,
+  //       },
+  //     },
+  //   });
   //DELETE SINGLE RECORD
   //   const deleteUser = await prisma.user.delete({
   //     where: {
@@ -77,7 +88,7 @@ async function main() {
   //     },
   //   });
   //TRANSACTION
-  const transaction = await prisma.$transaction([deletePosts, deleteUser]);
+  //   const transaction = await prisma.$transaction([deletePosts, deleteUser]);
 }
 
 main()
