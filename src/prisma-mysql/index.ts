@@ -90,6 +90,46 @@ async function main() {
   //     },
   //   });
   //   console.dir(users);
+  // GET BY FILTERED RELATED RECORD OF FIELD VALUES
+  //   const users = await prisma.user.findMany({
+  //     where: {
+  //       email: {
+  //         endsWith: "cryptolibertarian.id",
+  //       },
+  //       posts: {
+  //         some: {
+  //           published: true,
+  //         },
+  //       },
+  //     },
+  //   });
+  //   console.dir(users);
+  // SELECT BY SUBSET OF FIELDS
+  //   const user = await prisma.user.findUnique({
+  //     where: {
+  //       email: "gun@cryptolibertarian.id",
+  //     },
+  //     select: {
+  //       email: true,
+  //       profile: true,
+  //     },
+  //   });
+  //   console.dir(user);
+  // SELECT A SUBSET OF RELATED RECORD FIELDS
+  const user = await prisma.user.findUnique({
+    where: {
+      email: "gun@cryptolibertarian.id",
+    },
+    select: {
+      email: true,
+      posts: {
+        select: {
+          likes: true,
+        },
+      },
+    },
+  });
+  console.dir(user);
   // Run inside `async` function
   // UPDATE SINGLE RECORD
   //   const post = await prisma.user.update({
