@@ -47,6 +47,17 @@ async function main() {
   //     data: { profileViews: 100 },
   //   });
   //   console.dir(post);
+  // UPDATE MULTIPLE RECORD
+  //   const updateUsers = await prisma.user.updateMany({
+  //     where: {
+  //       email: {
+  //         contains: "prisma.io",
+  //       },
+  //     },
+  //     data: {
+  //       role: "ADMIN",
+  //     },
+  //   });
   // UPSERT (UPDATE OR INSERT
   //   const upsertUser = await prisma.user.upsert({
   //     where: {
