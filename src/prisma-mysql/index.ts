@@ -12,15 +12,15 @@ async function main() {
   //   });
 
   //CREATE MULTIPLE RECORD
-  const createMany = await prisma.user.createMany({
-    data: [
-      { name: "Gun", email: "gun@prisma.io" },
-      { name: "Maudy", email: "maudy@prisma.io" }, // Duplicate unique key!
-      { name: "KodokGempal", email: "KodokGempal@prisma.io" },
-      { name: "KodokZuma", email: "KodokZuma@prisma.io" },
-    ],
-    skipDuplicates: true, // Skip 'Bobo'
-  });
+  //   const createMany = await prisma.user.createMany({
+  //     data: [
+  //       { name: "Gun", email: "gun@prisma.io" },
+  //       { name: "Maudy", email: "maudy@prisma.io" }, // Duplicate unique key!
+  //       { name: "KodokGempal", email: "KodokGempal@prisma.io" },
+  //       { name: "KodokZuma", email: "KodokZuma@prisma.io" },
+  //     ],
+  //     skipDuplicates: true,
+  //   });
 
   //FIND ALL USER
   const listUsers = await prisma.user.findMany();
@@ -39,6 +39,13 @@ async function main() {
     })
     .catch((error) => console.log(error));
   //console.dir(resultFindByEmail);
+  // Run inside `async` function
+  //Update Single Record
+  const post = await prisma.user.update({
+    where: { id: 1 },
+    data: { profileViews: 100 },
+  });
+  console.dir(post);
 }
 
 main()
