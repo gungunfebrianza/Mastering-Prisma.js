@@ -116,20 +116,30 @@ async function main() {
   //   });
   //   console.dir(user);
   // SELECT A SUBSET OF RELATED RECORD FIELDS
-  const user = await prisma.user.findUnique({
-    where: {
-      email: "gun@cryptolibertarian.id",
-    },
-    select: {
-      email: true,
-      posts: {
-        select: {
-          likes: true,
-        },
-      },
-    },
-  });
-  console.dir(user);
+  //   const user = await prisma.user.findUnique({
+  //     where: {
+  //       email: "gun@cryptolibertarian.id",
+  //     },
+  //     select: {
+  //       email: true,
+  //       posts: {
+  //         select: {
+  //           likes: true,
+  //         },
+  //       },
+  //     },
+  //   });
+  //   console.dir(user);
+  // READ RELATED RECORD
+  //   const users = await prisma.user.findMany({
+  //     where: {
+  //       role: "USER",
+  //     },
+  //     include: {
+  //       posts: true,
+  //     },
+  //   });
+  //   console.dir(users);
   // Run inside `async` function
   // UPDATE SINGLE RECORD
   //   const post = await prisma.user.update({
