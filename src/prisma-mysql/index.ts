@@ -47,6 +47,19 @@ async function main() {
   //     data: { profileViews: 100 },
   //   });
   //   console.dir(post);
+  // UPSERT (UPDATE OR INSERT
+  //   const upsertUser = await prisma.user.upsert({
+  //     where: {
+  //       email: "viola@prisma.io",
+  //     },
+  //     update: {
+  //       name: "Viola the Magnificent",
+  //     },
+  //     create: {
+  //       email: "viola@prisma.io",
+  //       name: "Viola the Magnificent",
+  //     },
+  //   });
   // UPDATE NUMBER FIELDS
   //   const updatePosts = await prisma.post.updateMany({
   //     data: {
