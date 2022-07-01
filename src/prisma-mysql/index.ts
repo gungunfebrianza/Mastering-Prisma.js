@@ -34,7 +34,7 @@ async function main() {
   //       profile: true,
   //     },
   //   });
-  //console.dir(allUsers, { depth: null });
+  // console.dir(allUsers, { depth: null });
   // FIND SPECIFIC USER
   //   let resultFindByEmail = await prisma.user
   //     .findUnique({
@@ -182,14 +182,14 @@ async function main() {
   //       },
   //     },
   //   });
-  //DELETE SINGLE RECORD
+  // DELETE SINGLE RECORD
   //   const deleteUser = await prisma.user.delete({
   //     where: {
   //       email: "gungunfebrianza@prisma.io",
   //     },
   //   });
-  //console.dir(listUsers, { depth: null });
-  //DELETE MULTIPLE RECORD
+  // console.dir(listUsers, { depth: null });
+  // DELETE MULTIPLE RECORD
   //   const deleteUsers = await prisma.user.deleteMany({
   //     where: {
   //       email: {
@@ -197,8 +197,8 @@ async function main() {
   //       },
   //     },
   //   });
-  //DELETE ALL RECORD
-  //const deleteUsers = await prisma.user.deleteMany({});
+  // DELETE ALL RECORD
+  // const deleteUsers = await prisma.user.deleteMany({});
   // CASCADING DELETE
   //   const deletePosts = prisma.post.deleteMany({
   //     where: {
@@ -210,7 +210,7 @@ async function main() {
   //       id: 7,
   //     },
   //   });
-  //TRANSACTION
+  // TRANSACTION
   //   const transaction = await prisma.$transaction([deletePosts, deleteUser]);
 }
 
